@@ -51,6 +51,7 @@ class DecimalToBinaryPuzzle:
             converted_number = converted_number + (digits[i] * 2**i)
         if (converted_number == self.decimal_number):
             # Generates new number
+            self.difficulty_increase()
             self.generate_random()
             return True
         else:
