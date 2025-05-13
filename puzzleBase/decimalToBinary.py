@@ -30,7 +30,6 @@ class DecimalToBinaryPuzzle:
         for i in range(self.calculate_columns()):
             column = Column(i)
             self.columns.append(column)
-        return self.columns
     
     # Changes the column based on id (left to right)
     def change_column(self, id):
@@ -38,9 +37,14 @@ class DecimalToBinaryPuzzle:
         column.change_digit()
         return  column.return_digit()
     
-    # Generate random decimal number
+    # Returns current decimal number
+    def display_decimal(self):
+        return self.decimal_number
+    
+    # Generate random decimal number and displays the number itself
     def generate_random(self):
         self.decimal_number = random.randint(self.min, self.max)
+        self.display_decimal()
         
     # Check if the binary input is equal to the decimal number, returns True if correct and False if incorrect
     def confirm_answer(self):
